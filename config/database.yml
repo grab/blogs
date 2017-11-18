@@ -16,6 +16,9 @@ default: &default
   username: root
   host: localhost
   database: rails-mysql-timeouts
+  # Modify as you see fit
+  # connect_timeout: 5
+  # read_timeout: 5
 
 development:
   <<: *default
@@ -28,9 +31,9 @@ development_other:
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
-test:
-  <<: *default
-  database: rails-mysql-timeouts_test
+# test:
+#   <<: *default
+#   database: rails-mysql-timeouts_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is

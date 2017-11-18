@@ -3,14 +3,20 @@ services:
   db_main:
     image: mysql:5.7
     environment:
-      - MYSQL_ROOT_PASSWORD:test
+      - MYSQL_ALLOW_EMPTY_PASSWORD=1
   db_other:
     image: mysql:5.7
+    volumes:
+      - ./db_other:/seed
     environment:
       - MYSQL_ALLOW_EMPTY_PASSWORD=1
   web:
     build: .
     command: sleep infinity
+    working_dir: /myapp
+    environment:
+      - RAILS_ENV=production
+      - RAILS_LOG_TO_STDOUT=1
     volumes:
       - .:/myapp
     ports:

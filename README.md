@@ -1,24 +1,24 @@
-# README
+# Rails MySQL Timeouts
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This repo contains the source code which we use to experiment with Rails MySQL timeouts.
 
-Things you may want to cover:
+## Getting Started
 
-* Ruby version
+We use Docker to provision fresh environments for our application, so make sure the following dependencies are installed:
 
-* System dependencies
+- [Docker](https://docs.docker.com/engine/installation/)
+- [Docker Compose](https://docs.docker.com/compose/install/)
 
-* Configuration
 
-* Database creation
+With the dependencies installed, run make to get started. This creates two MySQL databases and Ruby environment for Rails, and opens an interactive TTY into this environment. See [`docker-compose.yml`](docker-compose.yml) for more details.
 
-* Database initialization
 
-* How to run the test suite
+```bash
+make
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+Now we can open an interactive shell into our Rails environment:
 
-* Deployment instructions
-
-* ...
+```
+make ssh
+```
