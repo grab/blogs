@@ -1,0 +1,20 @@
+version: '3'
+services:
+  db_main:
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD:test
+  db_other:
+    image: mysql:5.7
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=1
+  web:
+    build: .
+    command: sleep infinity
+    volumes:
+      - .:/myapp
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db_main
+      - db_other
