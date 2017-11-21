@@ -10,6 +10,10 @@ services:
       - ./db_other:/seed
     environment:
       - MYSQL_ALLOW_EMPTY_PASSWORD=1
+  db_other_proxy:
+    image: shopify/toxiproxy:2.1.0
+    ports:
+      - "8474:8474"
   web:
     build: .
     command: sleep infinity
