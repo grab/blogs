@@ -1,3 +1,6 @@
+# Copyright 2018 Grabtaxi Holdings PTE LTE (GRAB), All rights reserved.
+# Use of this source code is governed by an MIT-style license that can be found in the LICENSE file
+
 class PassengersController < ApplicationController
   before_action :set_passenger, only: [:show, :update, :destroy]
 
